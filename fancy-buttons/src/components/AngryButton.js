@@ -1,4 +1,4 @@
-import React from 'react'; //optional
+import { useState } from "react";
 
 function AngryButton(){
   return (
