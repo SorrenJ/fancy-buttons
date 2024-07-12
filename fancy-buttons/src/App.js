@@ -11,14 +11,29 @@ function App() {
   
   const switchLight = () => setLight((light === "on") ? "off" : "on");
 
+
+  const [angryApp, setAngryApp] = useState(0)
+  const increaseAnger = (amount) => {
+    if (angryApp < 1) {
+      setAngryApp(angryApp + amount);
+    } else {
+      setAngryApp(0);
+    }
+  
+  
+  }
+
+
+
+
   return (
     <div className={`App ${dark}`}>    
-      <h1>Fancy Buttons!</h1>
+      <h1>{angryApp < 1 ? "Fancy Buttons!" : "YOU'RE CLICKING TOO MANY BUTTONS!"}</h1>
       <section>
-        <AngryButton />
-        <CounterButton />
-        <LightSwitchButton  light={light} switchLight={switchLight}/>
-        <TextRepeaterButton />
+      <AngryButton increaseAnger={increaseAnger}/>
+        <CounterButton increaseAnger={increaseAnger}/>
+        <LightSwitchButton light={light} switchLight={switchLight} increaseAnger={increaseAnger}/>
+        <TextRepeaterButton increaseAnger={increaseAnger}/>
       </section>
     </div>
   );

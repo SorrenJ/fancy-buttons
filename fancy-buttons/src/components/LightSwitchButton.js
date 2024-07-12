@@ -8,7 +8,10 @@ function LightSwitchButton(props){
   const { light, switchLight } = props;
 
 
-  const handleClick = () => switchLight();
+  const handleClick = () => {
+    switchLight();
+    props.increaseAnger(0.1);
+  };
   return (
     
     <button onClick={switchLight} className="LightSwitchButton">
