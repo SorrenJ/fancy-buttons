@@ -1,11 +1,17 @@
 import { useState } from "react";
 
 function LightSwitchButton(props){
-  const {light, setLight} = props;
-  const handleClick = () => setLight(light === "on" ? "off" : "on");
+  // const {light, setLight} = props;
+  // const handleClick = () => setLight(light === "on" ? "off" : "on");
+
+
+  const { light, switchLight } = props;
+
+
+  const handleClick = () => switchLight();
   return (
     
-    <button onClick={handleClick} className="LightSwitchButton">
+    <button onClick={switchLight} className="LightSwitchButton">
       {/* When the state is on */}
  
 
